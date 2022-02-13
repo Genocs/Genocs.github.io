@@ -8,11 +8,28 @@ This is the Genocs entrypoint repo
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="/{{ post.url }}">{{ post.title }}</a>
+      <a href="/Genocs.github.io{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
 
+
+<div class="linked_post">
+    {% for post in site.posts %}
+        {% assign post_url = post.url | replace: "/", "" %}
+        {% if post_url == include.url %}
+            <div class="linked_post_div">
+                <article class="post">
+                    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+                    <p style="color: #969494; margin: 10px 0px; font-size: 18px;">
+                        {{ post.date | date: "%B %e, %Y" }}
+                    </p>
+                </article>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <br>
+</div>
 
 # picoservices
 This folder contains the template to build webApi with different languages.
