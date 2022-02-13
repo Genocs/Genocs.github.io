@@ -1,9 +1,9 @@
 theme: jekyll-theme-cayman
-title: Github Page Blog
+title: Github Pages Blog
 author: Nocco Giovanni Emanuele
 email: info@genocs.com
 description: > # this means to ignore newlines until "baseurl:"
-  Genocs githup pages.
+  Genocs github pages
 # social links
 twitter_username: NoccoGiovanni # DO NOT include the @ character, or else the build will fail!
 github_username:  giovanninocco # DO NOT include the @ character, or else the build will fail!
