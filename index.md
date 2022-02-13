@@ -2,9 +2,6 @@
 title: "Genocs"
 ---
 
-Thanks a lot to github pages to do this...
-
-
 This is the Genocs entrypoint repo 
 
 
