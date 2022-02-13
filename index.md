@@ -4,6 +4,15 @@ title: "Genocs"
 
 This is the Genocs entrypoint repo 
 
+# Post
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="/{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 
 # picoservices
 This folder contains the template to build webApi with different languages.
