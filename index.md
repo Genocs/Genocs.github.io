@@ -2,14 +2,17 @@
 title: "Welcome to Genocs"
 ---
 
-Home - GitHub pages
+The Idea
 ===
 
-This repo is intended to recap the main steps required to convert an idea into a software product. 
+This site is hosted by Github and built with Github pages.
 
-This process it is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets could change during the ‘path’. Often this happens without evaluating the impact of the changes on the entire ecosystem.
+The main scope of this is to recap the skillset acquired during the years in the ITC career, in order to enlist the main steps required to convert an idea into a software product. 
 
-To design a product and correctly implement it as software project it is necessary to have a clear and deeply knowledge of different areas, technologies, tools, and foremost, the right mindset.
+### Design implement and delivery a software product
+This process is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets could change during the ***path***, and this happens without evaluating the impact of the changes on the entire ecosystem.
+
+To design a product and correctly implement it as software project it is necessary to have a clear and deeply knowledge of different areas, technologies, tools, and foremost: **the right mindset**.
 
 
 ## Golden Rules
@@ -38,25 +41,28 @@ Terms like ***what*** and ***why*** are not enough. The ***how*** is very import
 Miss one of these key points and the solution will fail miserably.
 
 ### MPV
-Defining the MVP target is needed to be fast delivery something to the market. This is important to have a feedback as well as to keep in mind what are the core concept that canno be disattendend. 
+Defining the MVP target is needed to be fast on delivery something valuable to the market. This is important to have feedback as well as to keep in mind what are the core concepts that cannot be disattended. 
 
 ### KPI
 The KPI definition allow to have a monitor, ***the compass*** to estimate where the business is, and to apply the right corrections on the original plan.
 
-> ### NOTE
-> - During this stage the technical team is not involved ***(unless to warm-up the tech community)***
+### Stakeholdes - Key Reference Persons
 
-
+Following the early stage attendants:
+- Product Sponsor
+- Product Owner
+- Product Manger
+- Solution Architect
 
 ## Project Management
 There are a lot of different tools out there. 
 
-Some of them that I used, and I was comfortable with. A short list below:   
+Some of them that I used and I'm comfortable with. A short list below:
+- Microsoft Project
+- [[Microsoft] VSTS](https://dev.azure.com/) 
 - [[Atlassian] Jira](https://www.atlassian.com/software/jira)
 - [[Atlassian] Trello](https://trello.com/)
 - [Figma](https://www.figma.com/)
-- [[Microsoft] VSTS](https://dev.azure.com/)
-- Microsoft Project
 
 
 ## Product Architecture
@@ -64,9 +70,15 @@ Design the architecture is not a simple task.
 
 Different companies have different constraints. 
 
-For most of them be on the cloud is a must. It couldn’t be otherwise. But there are contexts where On-Prem is an unassailable requirement.
+For most of them be on the **Cloud** is a must. It couldn’t be otherwise. 
 
-An enterprice grade software solution is 
+But there are contexts where **On-Prem** solution is an unassailable requirement.
+
+An enterprise grade software solution is like a living organism. It change over time and this has a deep impact on the company shape as well. Both in terms of Processes, Tools and Requirements.
+
+A Startup is different from an on going company and they are different from elderly company.
+
+> Pay attention: all of them could be valuable ones economically speaking. The management is completely differently. 
 
 - Clean Architecture patterns
 - Microservice Architecture
