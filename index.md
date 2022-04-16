@@ -5,15 +5,17 @@ title: "Welcome to Genocs"
 The Idea
 ===
 
-This site is hosted by Github and built with Github pages.
+This site is hosted on Github and built with Github pages.
 
-The main scope of this is to recap the skillset acquired during the years in the ITC career, in order to enlist the main steps required to convert an idea into a software product. 
+The main scope of documentation is to recap what I learned from participating to the development of many different project during years.
+Each project provides a lot of insight coming both from both positive and negative side.
 
-### Design implement and delivery a software product
-This process is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets could change during the ***path***, and this happens without evaluating the impact of the changes on the entire ecosystem.
+Starting from that I decided to describe some of the main topic required to convert an idea into a software product.
 
-To design a product and correctly implement it as software project it is necessary to have a clear and deeply knowledge of different areas, technologies, tools, and foremost: **the right mindset**.
+### How Design Implement and Delivery a software product
+This process is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets change during the ***path***, and this happens without evaluating the impact of the changes on the entire ecosystem.
 
+To design a product and implement it as software project it is necessary to have a clear and deeply knowledge of different areas. Interdisciplinary skills are required. It is required mastering Technologies, Tools, people and foremost: **the right mindset**.
 
 ## Golden Rules
 Before starting to do anything, do not forget to apply these general golden rules!
@@ -30,7 +32,7 @@ and remember:
 ## Setup the Idea
 In this stage, the stakeholders should describe the idea behind the product. 
 
-The market analysis like competitors’ evaluation, **MVP** (Minimum Viable Product) and the **KPI** (Key Product Indicators) identification should be defined upfront and deeply evaluated.
+The market analysis like competitors evaluation, **MVP** (Minimum Viable Product) and the **KPI** (Key Product Indicators) identification should be defined upfront and deeply evaluated.
 
 Terms like ***what*** and ***why*** are not enough. The ***how*** is very important as well.
 
@@ -38,26 +40,26 @@ Terms like ***what*** and ***why*** are not enough. The ***how*** is very import
 - **Why** we are doing that
 - **How** we are building the solution
 
-Miss one of these key points and the solution will fail miserably.
+Just missing one of these key points and the solution will fail miserably.
 
 ### MPV
-Defining the MVP target is needed to be fast on delivery something valuable to the market. This is important to have feedback as well as to keep in mind what are the core concepts that cannot be disattended. 
+The MVP definition is needed to deliver something valuable to the market quickly. This is important to have concrete feedback as well as to reevaluate the core concepts. Sometime the original idea needs to be revisited a lot of time before receiving positive feedback from the market.  
 
 ### KPI
-The KPI definition allow to have a monitor, ***the compass*** to estimate where the business is, and to apply the right corrections on the original plan.
+The KPI definition allows to have a monitor. The KPI will be ***the compass*** to estimate where the project is and based on that to apply the right corrections. 
 
 ### Stakeholdes - Key Reference Persons
 
-Following the early stage attendants:
+Following the early-stage attendants:
 - Product Sponsor
 - Product Owner
-- Product Manger
+- Product Manager
 - Solution Architect
 
 ## Project Management
 There are a lot of different tools out there. 
 
-Some of them that I used and I'm comfortable with. A short list below:
+Some of them are broadly adopted. Some of them are the standard ***de facto***. A brief list below:
 - Microsoft Project
 - [[Microsoft] VSTS](https://dev.azure.com/) 
 - [[Atlassian] Jira](https://www.atlassian.com/software/jira)
@@ -66,19 +68,19 @@ Some of them that I used and I'm comfortable with. A short list below:
 
 
 ## Product Architecture
-Design the architecture is not a simple task. 
+Designing the architecture is not a simple task. 
 
 Different companies have different constraints. 
 
-For most of them be on the **Cloud** is a must. It couldn’t be otherwise. 
+For most of them being on the **Cloud** is necessary. It couldn’t be otherwise. 
 
 But there are contexts where **On-Prem** solution is an unassailable requirement.
 
-An enterprise grade software solution is like a living organism. It change over time and this has a deep impact on the company shape as well. Both in terms of Processes, Tools and Requirements.
+An enterprise grade software solution is like a living organism. It changes over time, and this has a deep impact on the company shape as well. Both in terms of Processes, Tools, and Requirements.
 
-A Startup is different from an on going company and they are different from elderly company.
+A Startup is different from an ongoing company, and they are different from elderly companies.
 
-> Pay attention: all of them could be valuable ones economically speaking. The management is completely differently. 
+> Pay attention: all of them could be valuable ones economically speaking. The management is completely different. 
 
 - Clean Architecture patterns
 - Microservice Architecture
@@ -86,29 +88,34 @@ A Startup is different from an on going company and they are different from elde
 
 ## DevOps
 
-### Source code Versioning
-The source code versioning is the repository where different developers store the result of their work. This tool could and should be used even when the development team is composed by few members even only one.
+### Source Code Versioning
+The source code versioning is the repository where different developers store the result of their work. This tool could and should be used even when the development team is composed of few members, even only one.
 
-These repositories allow to store projects both in a public and private fashion. The most important one are: 
+These repositories allow us to store projects both in a public and private fashion. The most important ones are: 
 - [[Atlassian] Bitbutchet](https://bitbucket.org/)
 - [GitHub](https://github.com/)
-- [[Microsoft] VSTS](https://azure.microsoft.com/en-us/services/devops/)
+- [Microsoft-VSTS](https://azure.microsoft.com/en-us/services/devops/)
 
-### CI/CD (Continuous Integration / Continuous Deploy) (How to build tests and run)
+### CI/CD (Continuous Integration / Continuous Deploy)
+The CI/CD allows to define: How to run builds and tests software
 - [Circle CI](https://circleci.com/)
+- [GitHub Action](https://github.com/features/actions/)
 - [Travis CI](https://travis-ci.com/)
-- [[Microsoft] Azure Devops](https://dev.azure.com/)
+- [Microsoft-Azure Devops](https://dev.azure.com/)
 
-### Package manager (How store the artifacts)
+
+### Package manager
+The Package Manage allows to handle: Where to store the artifacts
 - [NuGet](https://www.nuget.org/) [.NET]
 - [MyGet](https://www.myget.org/) [.NET]
 - [DockerHub](https://hub.docker.com/) [Container registry]
 - Private Repository
 
 
-## The platforms (Where the solution is executed)
+### The Host 
+Where the compiled is executed
 
-- Local [StandAlone local Application]
+- Local [StandAlone Local Application]
 - Device [Mobile and/or Embedded Application]
 - On-Prem
 - Public Cloud
@@ -117,7 +124,8 @@ These repositories allow to store projects both in a public and private fashion.
 	- [Google Cloud](https://cloud.google.com/)
 	- [Digital Ocean](https://cloud.digitalocean.com/)
 
-### The external services (What kind of infrastructure the services are needs)
+### The external services
+What kind of infrastructure the services are needs
 
 - Datastore
     - [MongoDB](https://www.mongodb.com/)
@@ -146,10 +154,8 @@ These repositories allow to store projects both in a public and private fashion.
 - Backend services
 - Frontend Services
 - Mobile and Embedded
-- Machine learning 
+- Machine learning modules
 - Data analysis and processing
-
-### Backend services
 
 ## Programming languages
 - C/C++
@@ -160,6 +166,8 @@ These repositories allow to store projects both in a public and private fashion.
 - Python
 - nodejs
 - Java
+
+### Backend services
 
 
 ### Post

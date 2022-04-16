@@ -26,16 +26,14 @@ Following command allows toggling between Windows and Linux
 ``` PS
 & $Env:ProgramFiles\Docker\Docker\DockerCli.exe -SwitchDaemon
 ```
+## Some commands
 
-## How check images list available locally
-``` PS
+``` bash
+# Get docker images list available locally
 docker images
-```
 
-## How show runninng container
-Flag --all show even not running
-
-``` PS
+# How show runninng container
+# Flag --all show even not running
 docker container ls --all
 ```
 
@@ -58,7 +56,8 @@ docker rm $(docker ps -a -q)
 # Delete all the images
 docker rmi $(docker images -q)
 
-# Delete all the images (force delete) very usefull when an image has multiple references
+# Delete all the images (force delete) 
+# very usefull when an image has multiple references
 docker container prune
 
 # Remove image
@@ -99,47 +98,127 @@ Useful network commands
 docker network ls
 
 # Crete a network
-docker network create myapp_net
+docker network create genocs-network
 
 # Remove unused networks
 docker network prune
-
 ```
 
 # Docker Volumes
-Docker allows to manage volumes as external data folder. These volumes can be either folder managed by host or logical volumes managed by Virtual Machine.
-Use following link to a complete list of commands 
+Official documentation:
 [Docker Volumes](https://docs.docker.com/engine/reference/commandline/volume_ls/#usage)
 
-``` PS
-docker volume ls
-docker volume create my_data-vol
-docker volume prune
-docker volume rm
+Docker allows to manage volumes as external data folder. These volumes can be either folder managed by host or logical volumes managed by Virtual Machine.
+Use following link to a complete list of commands 
 
+
+``` bash
+# Get the available docker volumes
+docker volume ls
+
+# Crete a volume
+docker volume create genocs-vol
+
+# Remove unused volumes
+docker volume prune
+
+# Remove the volumes
+docker volume rm
 ```
+
+# Pull docker images from repository
+``` bash
+## How get an image from repository (default: leatest version)
+docker pull microsoft/aspnet
+docker pull microsoft/nanoserver
+
+# Pull a Docker Image from Azure Container Registry (ACR)
+docker pull genocscontainerregistry.azurecr.io/solomonbesearch:60
+
+# Run the image
+docker run  genocscontainerregistry.azurecr.io/solomonbesearch:60 -p 80:5001
+
+
+# Before start check if the network exist
+# otherwise remove it or 
+# create the network
+docker run -d --name qrcode_1 -p 5000:5001 genocs.qrcode --network genocs-network
+docker run -d --name qrcode_2 -p 5000:5002 genocs.qrcode --network genocs-network
+```
+
+## How run shell inside a container
+``` bash
+docker exec -it redis bash
+```
+
+# Builds
+
+``` bash
+# Build the Docker image using the Docker file 
+# located in the current directory
+docker build -t genocs.qrcode .
+
+# Create the image tag
+docker tag genocs.qrcode genocs/identity
+```
+
+### Push the images to the remote repository (Docker Hub)
+
+``` bash
+# Push the image 'genocs/identity' to DockerHub repostory
+docker push genocs/identity
+```
+
+## Clear
+``` bash
+#!/bin/bash
+docker rm -f $(docker ps -a -q)
+docker volume rm $(docker volume ls)
+docker rmi -f $(docker images -q)
+```
+
+
+## Clear All
+``` bash
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+docker rmi $(docker images -q) -f
+
+docker container prune
+docker network prune
+docker volume prune
+
+docker container ls
+docker network ls
+docker volume ls
+```
+
+# WSL
+Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.
+
+[Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/)
+
+``` PS
+# Shutdown 
+wsl --shutdown
+
+# Edit the configuration
+notepad "$env:USERPROFILE/.wslconfig"
+```
+
+---
+# Old data - Will be removed 
+
 
 -v "$PWD/neo4j":/usr/share/elasticsearch/data
 --volume=$HOME/neo4j:/usr/share/elasticsearch/data
 -v my-vol:/usr/share/elasticsearch/data
 
 
-## How run shell inside  container
-``` PS
-docker exec -it redis bash
-```
-
-
-## How get an image from repository (default: leatest version)
-``` PS
-docker pull microsoft/aspnet
-docker pull microsoft/nanoserver
-```
-
-
 ## Procedura per installare l'immagine di ASP.NET (Leatest Version)
 
-``` PS
+``` bash
 docker inspect 1b4e1cd7ddb6
 docker run debian echo "Welcome to Docker"
 docker run -it debian /bin/bash
@@ -160,7 +239,7 @@ For my own testing, I installed Docker for Windows on my Windows 10 development 
 To make sure the service is installed correctly, run this from the terminal:
 
 
-``` PS
+``` bash
 docker --version
 ```
 
@@ -170,7 +249,7 @@ If you see a version number, everything is working!
 # Creating an ASP.NET Core project
 If you don’t already have the latest .NET Core tooling installed, grab that at the official .NET Core site. Once it’s installed on your machine, you can create a new directory and scaffold a new ASP.NET Core project easily:
 
-``` PS
+``` bash
 mkdir AspNetCoreHelloWorld
 cd AspNetCoreHelloWorld
 dotnet new web --framework netcoreapp1.1
@@ -178,7 +257,7 @@ dotnet new web --framework netcoreapp1.1
 
 To make sure everything is working, try running the project locally first:
 
-``` PS
+``` bash
 dotnet restore
 dotnet run
 ```
@@ -189,7 +268,7 @@ Building a Dockerfile for ASP.NET Core
 Docker needs a Dockerfile that contains the “recipe” for creating an image based on the project. 
 Create a new file called Dockerfile in the project directory:
 
-``` BASH
+``` bash
 touch Dockerfile
 ```
 
@@ -227,7 +306,7 @@ ENTRYPOINT specifies the command to execute when the container starts up. In thi
 Creating the Docker image
 Once you’ve created the Dockerfile, you’re ready to build an image:
 
-``` PS
+``` bash
 docker build -t genocs:aspnetcorehelloworld .
 ```
 
@@ -235,7 +314,7 @@ See that trailing period? That tells docker to look in the current directory for
 
 When the image finishes building, you can spin it up:
 
-``` PS
+``` bash
 docker run -d -p 8083:5000 -t genocs:aspnetcorehelloworld
 ```
 
@@ -260,7 +339,7 @@ RabbitMQ container
 [RabbitMQ](https://hub.docker.com/_/rabbitmq/)
 
 
-``` PS
+``` bash
 docker build -t my_test .
 
 docker run -d --hostname hpn-rabbit-host --name hpn-rabbit rabbitmq:3
@@ -270,7 +349,7 @@ docker run -d --hostname hpn-rabbit-host --name hpn-rabbit -p 15672:15672 -p 567
 docker logs  hpn-rabbit
 ```
 
-``` PS
+``` bash
 docker build -t utu_rabbit .
 docker run -d --hostname utu_rabbit-host --name utu-points -p 15672:15672 -p 5672:5672 utu_rabbit:latest
 docker logs utu-points
@@ -280,76 +359,11 @@ docker logs utu-points
 I seguenti comandi eseguono il container utilizzando la rete locale e facendo il forward delle porte.
 Nota: La rete locale deve essere stata creata
 
-``` PS
+``` bash
 docker run -d --hostname hpn_rabbit_host --name hpn_rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management --network utu_server_back
 docker logs some-rabbit
 ```
 
-
-
-# Clear
-``` bash
-#!/bin/bash
-docker rm -f $(docker ps -a -q)
-docker volume rm $(docker volume ls)
-docker rmi -f $(docker images -q)
-```
-
-
 # Very useful rabbit example
-https://github.com/Gsantomaggio/rabbitmqexample
+[Gsantomaggio](https://github.com/Gsantomaggio/rabbitmqexample)
 
-
-# Clear All
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker rmi $(docker images -q)
-docker rmi $(docker images -q) -f
-
-docker container prune
-docker network prune
-docker volume prune
-
-docker container ls
-docker network ls
-docker volume ls
-
-
-
-Build steps
-
-
-``` bash
-# Build the Docker image
-docker build -t genocs.qrcode .
-
-# Create the image tag
-docker tag genocs.qrcode genocs/identity
-```
-
-
-### Run the container
-Before start check if the network exist otherwise remove it or create the network
-
-``` ps
-docker run -d --name qrcode_1 -p 5000:5001 genocs.qrcode --network genocs-network
-docker run -d --name qrcode_2 -p 5000:5002 genocs.qrcode --network genocs-network
-
-```
-
-
-
-### Push the images to the Docker image repository (Docker Hub)
-
-``` ps
-docker push genocs/identity
-```
-
-
-docker pull genocscontainerregistry.azurecr.io/solomonbesearch:60
-docker run  genocscontainerregistry.azurecr.io/solomonbesearch:60 -p 80:5001
-
-
-
-wsl --shutdown
-notepad "$env:USERPROFILE/.wslconfig"
