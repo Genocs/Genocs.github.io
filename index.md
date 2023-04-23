@@ -14,6 +14,12 @@ Before starting to do anything, don't forget to apply these general purpose gold
 - DRY (Don't repeat yourself)
 - KISS (Keep It Simple Stupid)
 
+
+**Don't Repeat Yourself** (DRY) is a software development principle that states that software developers should avoid repeating the same code or data in multiple places. This principle encourages developers to create abstractions and modularize their code, making it easier to maintain and update. By following the DRY principle, developers can reduce the amount of time spent on debugging and refactoring code, as well as improve the overall quality of their software.
+
+The **Keep It Simple Stupid** (KISS) pattern is a software development principle that encourages developers to create solutions that are easy to understand and maintain. This pattern emphasizes the importance of writing code that is straightforward, efficient, and free of unnecessary complexity. By following this pattern, developers can create applications that are easier to debug and maintain over time.
+
+
 and remember:
 
 > - The best and fastest way to do something is don't.
