@@ -14,6 +14,11 @@ Before starting to do anything, do not forget to apply these general golden rule
 - DRY (Don't repeat yourself)
 - KISS (Keep It Simple Stupid)
 
+**Don't Repeat Yourself** (DRY) is a software development principle that states that software developers should avoid repeating the same code or data in multiple places. This principle encourages developers to create abstractions and modularize their code, making it easier to maintain and update. By following the DRY principle, developers can reduce the amount of time spent on debugging and refactoring code, as well as improve the overall quality of their software.
+
+The **Keep It Simple Stupid** (KISS) pattern is a software development principle that encourages developers to keep their code and designs as simple as possible. This helps to reduce complexity, improve readability, and make the code easier to maintain. The KISS principle also promotes the use of fewer lines of code, which can help to reduce development time and cost.
+
+
 and remember:
 
 > - The best and fastest way to do something is don't.
@@ -62,7 +67,7 @@ Different companies have different constraints.
 
 For most of them be on the cloud is a must. It couldn’t be otherwise. But there are contexts where On-Prem is an unassailable requirement.
 
-An enterprice grade software solution is 
+An enterprise level software solution is 
 
 - Clean Architecture patterns
 - Microservice Architecture
@@ -111,10 +116,10 @@ These repositories allow to store projects both in a public and private fashion.
     - [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server)
     - [Oracle database](https://www.oracle.com/database/) 
 	
-- Enterprice message broker
+- Enterprise message broker
     - [RabbitMQ](https://www.rabbitmq.com/)
 
-- Enterprice Service Bus
+- Enterprise Service Bus
 	- [Particular-NServicebus](https://particular.net/)
 	- [MassTransit](https://masstransit-project.com/)
 	- [Rebus](https://github.com/rebus-org/Rebus/)

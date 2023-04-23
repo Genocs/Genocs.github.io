@@ -40,4 +40,6 @@ Distributed App
 ## DAO
 Distributed Autonomus Organization
 
-KPI for ESG Environmental Social Corporate Governance
+### KPI for ESG Environmental Social Corporate Governance
+
+KPI for ESG Environmental Social Corporate Governance (ESG) is a set of metrics used to measure the performance of a company in terms of its environmental, social and corporate governance practices. These metrics are used to assess the sustainability of a company’s operations and to identify areas where improvements can be made. The KPI for ESG helps companies to track their progress towards meeting their sustainability goals and to ensure that they are taking the necessary steps to protect the environment, promote social responsibility and maintain good corporate governance.

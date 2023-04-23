@@ -1,24 +1,15 @@
----
-title: "Welcome to Genocs"
----
-
-The Idea
+Welcome to Genocs - GitHub pages
 ===
 
-This site is hosted on Github and built with Github pages.
+This repo is intended to recap the main steps required to convert an idea into a software product. 
 
-The main scope of documentation is to recap what I learned from participating to the development of many different project during years.
-Each project provides a lot of insight coming both from both positive and negative side.
+This process it is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets could change during the ‘path’. Often this happens without evaluating the impact of the changes on the entire ecosystem.
 
-Starting from that I decided to describe some of the main topic required to convert an idea into a software product.
+To design a product and to implement it correctly, as software project it is necessary to have a clear and deeply knowledge of different areas, technologies, tools, and foremost, the right mindset.
 
-### How Design Implement and Delivery a software product
-This process is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets change during the ***path***, and this happens without evaluating the impact of the changes on the entire ecosystem.
-
-To design a product and implement it as software project it is necessary to have a clear and deeply knowledge of different areas. Interdisciplinary skills are required. It is required mastering Technologies, Tools, people and foremost: **the right mindset**.
 
 ## Golden Rules
-Before starting to do anything, do not forget to apply these general golden rules!
+Before starting to do anything, don't forget to apply these general purpose golden rules!
 
 - DRY (Don't repeat yourself)
 - KISS (Keep It Simple Stupid)
@@ -40,47 +31,38 @@ Terms like ***what*** and ***why*** are not enough. The ***how*** is very import
 - **Why** we are doing that
 - **How** we are building the solution
 
-Just missing one of these key points and the solution will fail miserably.
+Miss one of these key points and the solution will fail miserably.
 
 ### MPV
-The MVP definition is needed to deliver something valuable to the market quickly. This is important to have concrete feedback as well as to reevaluate the core concepts. Sometime the original idea needs to be revisited a lot of time before receiving positive feedback from the market.  
+Defining the MVP target is needed to be fast delivery something to the market. This is important to have feedback as well as to keep in mind what are the core concept that canno be disattended. 
 
 ### KPI
-The KPI definition allows to have a monitor. The KPI will be ***the compass*** to estimate where the project is and based on that to apply the right corrections. 
+The KPI definition allow to have a monitor, ***the compass*** to estimate where the business is, and to apply the right corrections on the original plan.
 
-### Stakeholdes - Key Reference Persons
+> ### NOTE
+> - During this stage the technical team is not involved ***(unless to warm-up the tech community) ***
 
-Following the early-stage attendants:
-- Product Sponsor
-- Product Owner
-- Product Manager
-- Solution Architect
+
 
 ## Project Management
 There are a lot of different tools out there. 
 
-Some of them are broadly adopted. Some of them are the standard ***de facto***. A brief list below:
-- Microsoft Project
-- [[Microsoft] VSTS](https://dev.azure.com/) 
+Some of them that I used, and I was comfortable with. A short list below:   
 - [[Atlassian] Jira](https://www.atlassian.com/software/jira)
 - [[Atlassian] Trello](https://trello.com/)
 - [Figma](https://www.figma.com/)
+- [[Microsoft] VSTS](https://dev.azure.com/)
+- Microsoft Project
 
 
 ## Product Architecture
-Designing the architecture is not a simple task. 
+Design the architecture is not a simple task. 
 
 Different companies have different constraints. 
 
-For most of them being on the **Cloud** is necessary. It couldn’t be otherwise. 
+For most of them be on the cloud is a must. It couldn’t be otherwise. But there are contexts where On-Prem is an unassailable requirement.
 
-But there are contexts where **On-Prem** solution is an unassailable requirement.
-
-An enterprise grade software solution is like a living organism. It changes over time, and this has a deep impact on the company shape as well. Both in terms of Processes, Tools, and Requirements.
-
-A Startup is different from an ongoing company, and they are different from elderly companies.
-
-> Pay attention: all of them could be valuable ones economically speaking. The management is completely different. 
+An entreprise grade software solution is 
 
 - Clean Architecture patterns
 - Microservice Architecture
@@ -88,34 +70,29 @@ A Startup is different from an ongoing company, and they are different from elde
 
 ## DevOps
 
-### Source Code Versioning
-The source code versioning is the repository where different developers store the result of their work. This tool could and should be used even when the development team is composed of few members, even only one.
+### Source code Versioning
+The source code versioning is the repository where different developers store the result of their work. This tool could and should be used even when the development team is composed by few members even only one.
 
-These repositories allow us to store projects both in a public and private fashion. The most important ones are: 
+These repositories allow to store projects both in a public and private fashion. The most important one is: 
 - [[Atlassian] Bitbutchet](https://bitbucket.org/)
 - [GitHub](https://github.com/)
-- [Microsoft-VSTS](https://azure.microsoft.com/en-us/services/devops/)
+- [[Microsoft] VSTS](https://azure.microsoft.com/en-us/services/devops/)
 
-### CI/CD (Continuous Integration / Continuous Deploy)
-The CI/CD allows to define: How to run builds and tests software
+### CI/CD (Continuous Integration / Continuous Deploy) (How to build tests and run)
 - [Circle CI](https://circleci.com/)
-- [GitHub Action](https://github.com/features/actions/)
 - [Travis CI](https://travis-ci.com/)
-- [Microsoft-Azure Devops](https://dev.azure.com/)
+- [[Microsoft] Azure Devops](https://dev.azure.com/)
 
-
-### Package manager
-The Package Manage allows to handle: Where to store the artifacts
+### Package manager (How store the artifacts)
 - [NuGet](https://www.nuget.org/) [.NET]
 - [MyGet](https://www.myget.org/) [.NET]
 - [DockerHub](https://hub.docker.com/) [Container registry]
 - Private Repository
 
 
-### The Host 
-Where the compiled is executed
+## The platforms (Where the solution is executed)
 
-- Local [StandAlone Local Application]
+- Local [StandAlone local Application]
 - Device [Mobile and/or Embedded Application]
 - On-Prem
 - Public Cloud
@@ -124,8 +101,7 @@ Where the compiled is executed
 	- [Google Cloud](https://cloud.google.com/)
 	- [Digital Ocean](https://cloud.digitalocean.com/)
 
-### The external services
-What kind of infrastructure the services are needs
+### The external services (What kind of infrastructure the services are needs)
 
 - Datastore
     - [MongoDB](https://www.mongodb.com/)
@@ -154,8 +130,10 @@ What kind of infrastructure the services are needs
 - Backend services
 - Frontend Services
 - Mobile and Embedded
-- Machine learning modules
+- Machine learning 
 - Data analysis and processing
+
+### Backend services
 
 ## Programming languages
 - C/C++
