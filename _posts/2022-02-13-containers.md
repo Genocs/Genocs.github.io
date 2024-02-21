@@ -1,5 +1,9 @@
-Docker Get Started
-===
+---
+title: "Docker Container Get Started"
+date: 2024-02-21
+---
+
+# Docker Get Started
 
 Install Docker based on the Host OS.
 
@@ -87,8 +91,9 @@ docker-compose up
 Official documentation:
 [Docker network](https://docs.docker.com/engine/userguide/networking/work-with-networks/)
 
-If you are running your containers in a user-defined network, then Docker maintains a DNS server that will map container names to addresses.
-That is, if I first create a network: [user-defined network]((https://docs.docker.com/engine/userguide/networking/)
+If you are running your containers in your docker network, then Docker maintains a DNS server that will map container names to addresses.
+
+[network guide](https://docs.docker.com/engine/userguide/networking/)
 
 
 Useful network commands 
@@ -102,6 +107,9 @@ docker network create genocs-network
 
 # Remove unused networks
 docker network prune
+
+# Remove all the network 
+docker network prune --force
 ```
 
 # Docker Volumes
@@ -119,16 +127,25 @@ docker volume ls
 # Crete a volume
 docker volume create genocs-vol
 
+# Remove the volumes
+docker volume rm [voulume_name]
+
 # Remove unused volumes
 docker volume prune
 
-# Remove the volumes
-docker volume rm
+# Remove all the volumes
+docker volume prune --all
+
+
+# Remove all the system volumes
+docker system prune --all --force --volumes
 ```
 
+
 # Pull docker images from repository
+
 ``` bash
-## How get an image from repository (default: leatest version)
+# How get an image from repository (default: leatest version)
 docker pull microsoft/aspnet
 docker pull microsoft/nanoserver
 
@@ -179,6 +196,7 @@ docker rmi -f $(docker images -q)
 
 
 ## Clear All
+
 ``` bash
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
@@ -207,36 +225,13 @@ wsl --shutdown
 notepad "$env:USERPROFILE/.wslconfig"
 ```
 
----
-# Old data - Will be removed 
+----
 
+# Old data - Will be removed 
 
 -v "$PWD/neo4j":/usr/share/elasticsearch/data
 --volume=$HOME/neo4j:/usr/share/elasticsearch/data
 -v my-vol:/usr/share/elasticsearch/data
-
-
-## Procedura per installare l'immagine di ASP.NET (Leatest Version)
-
-``` bash
-docker inspect 1b4e1cd7ddb6
-docker run debian echo "Welcome to Docker"
-docker run -it debian /bin/bash
-```
-
-## Esempio completo
-
-Il seguente esempio è stato copiato dal link:
-
-[stormpath.com](https://stormpath.com/blog/tutorial-deploy-asp-net-core-on-linux-with-docker)
-
-Setting up Docker
-It’s easy to get started with Docker.
-First, you have to install the Docker Engine on your machine (or your server).
-Follow the official instructions for Windows 10, Mac, or Linux.
-
-For my own testing, I installed Docker for Windows on my Windows 10 development environment, and also on my Mac.
-To make sure the service is installed correctly, run this from the terminal:
 
 
 ``` bash
@@ -277,7 +272,7 @@ Make sure that this file isn’t saved with an extension like .txt – it’s su
 
 The Dockerfile contents are straightforward:
 
-``` js
+``` dockerfile
 FROM microsoft/dotnet:2.0.0-sdk
 
 ENV http_proxy 192.168.2.7:3128
