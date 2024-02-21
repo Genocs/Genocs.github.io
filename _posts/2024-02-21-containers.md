@@ -128,7 +128,7 @@ docker volume ls
 docker volume create genocs-vol
 
 # Remove the volumes
-docker volume rm [voulume_name]
+docker volume rm [volume_name]
 
 # Remove unused volumes
 docker volume prune
