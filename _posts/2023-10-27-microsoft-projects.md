@@ -1,9 +1,9 @@
 ---
-title: "Mocrosoft Open-Source Projects"
+title: "Microsoft Open-Source Projects"
 date: 2023-10-27
 ---
 
-# This page contains the list of microsoft project that can change your life :)
+# This page contains the list of Microsoft project that can change your life :)
 
 - [Presidio](https://microsoft.github.io/presidio/)
 - [RulesEngine](https://microsoft.github.io/RulesEngine/)
