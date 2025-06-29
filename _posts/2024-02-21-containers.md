@@ -15,12 +15,12 @@ Try this link in order to install Docker on Windows 10
 1. Set environmental variable HTTP_PROXY
 2. Restart the server
 
-``` PS
+``` bash
 Restart-Service docker
 ```
 
 ## How run login
-``` PS
+``` bash
 docker login
 ```
 
@@ -153,8 +153,7 @@ docker pull microsoft/nanoserver
 docker pull genocscontainerregistry.azurecr.io/solomonbesearch:60
 
 # Run the image
-docker run  genocscontainerregistry.azurecr.io/solomonbesearch:60 -p 80:5001
-
+docker run -p 80:5001 giulionocco/bayes:1.0.0 
 
 # Before start check if the network exist
 # otherwise remove it or 
@@ -176,7 +175,7 @@ docker exec -it redis bash
 docker build -t genocs.qrcode .
 
 # Create the image tag
-docker tag genocs.qrcode genocs/identity
+docker tag genocs.qrcode genocs/qrcode
 ```
 
 ### Push the images to the remote repository (Docker Hub)
