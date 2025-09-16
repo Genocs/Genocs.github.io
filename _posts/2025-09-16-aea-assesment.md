@@ -7,30 +7,22 @@ categories: architectures
 
 # Repository structure for .NET Solution
 
+```
 root-project/
 ├── .cursor/
-│   ├── rules/
-│   │   ├── ...
+│   └── rules/
 ├── .git/
-│   ├── ...
 ├── .github/
-│   ├── workflows/
-│   │   ├── ...
+│   └── workflows/
 ├── devops/
-│   ├── azure
-│   │   ├── ...
+│   └── azure/
 ├── infrastructure/
 │   ├── bicep/
-│   │   ├── ...
-│   ├── terraform/
-│   │   ├── ...
-│   ├── ...
+│   └── terraform/
 ├── scripts/
-│   ├── ...
 ├── src/
-│   ├── ...
 ├── .gitignore
-├── .editconfig
+├── .editorconfig
 ├── Directory.Build.props
 ├── Directory.Build.targets
 ├── dotnet.ruleset
@@ -39,6 +31,7 @@ root-project/
 ├── nuget.config
 ├── project.sln
 ├── README.md
+```
 
 
 ## Build pipeline
@@ -56,23 +49,23 @@ The deployment pipeline shall be separated by the build pipeline.
 PR approvation is not compulsory, developer will decide when code review is need.
 
 
-| Repo                            | Artifact                   | Note                            |
-| ------------------------------- | -------------------------- | ------------------------------- |
-| AEA.Appointments                | WebAPI                     |                                 |
-| AEA.BusinessLayer               | WebAPI/FunctionApp         | Split to multiple microservices |
-| AEA.BusinessLayer.LogicApps     | LogicApps                  | Convert to WebApp               |
-| AEA.CommunicationLayer          |                            |                                 |
-| AEA.DocumentLayer               | WebAPI/FunctionApp         |                                 |
-| AEA.Frontend                    | Web                        | Move to docker                  |
-| AEA.Infrastructure              | N/A                        |                                 |
-| AEA.Meteorage                   | WebAPI                     |                                 |
-| AEA.OrdersLayer                 | WebAPI/FunctionApp         |                                 |
-| AEA.ProcessLayer                | FunctionApp                |                                 |
-| AEA.Profiles                    | WebAPI                     |                                 |
-| AEA.Proxy                       | WebAPI                     |                                 |
-| AEA.ReverseProxyYarp            | WebAPI                     |                                 |
-| AEA.Scheduler                   |                            | Check if still required         |
-| AEA.SharedLibs                  | Nuget                      | Build removing prerelease       |
+| Repo                        | Artifact             | Note                            |
+|-----------------------------|----------------------|----------------------------------|
+| AEA.Appointments            | WebAPI               |                                  |
+| AEA.BusinessLayer           | WebAPI/FunctionApp   | Split into multiple microservices |
+| AEA.BusinessLayer.LogicApps | LogicApps            | Convert to WebApp                |
+| AEA.CommunicationLayer      |                      |                                  |
+| AEA.DocumentLayer           | WebAPI/FunctionApp   |                                  |
+| AEA.Frontend                | Web                  | Move to Docker                   |
+| AEA.Infrastructure          | N/A                  |                                  |
+| AEA.Meteorage               | WebAPI               |                                  |
+| AEA.OrdersLayer             | WebAPI/FunctionApp   |                                  |
+| AEA.ProcessLayer            | FunctionApp          |                                  |
+| AEA.Profiles                | WebAPI               |                                  |
+| AEA.Proxy                   | WebAPI               |                                  |
+| AEA.ReverseProxyYarp        | WebAPI               |                                  |
+| AEA.Scheduler               |                      | Check if still required          |
+| AEA.SharedLibs              | NuGet                | Build removing prerelease        |
 
 ## Todo
 
