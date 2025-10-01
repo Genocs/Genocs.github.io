@@ -10,20 +10,19 @@ Google AI Studio is a collaborative platform that allows users to build, deploy,
 
 [google aistudio/](https://aistudio.google.com/)
 
-
 ### Example of prompt to build an app with Google AI Studio
 
 Starting prompt:
 
-``` plaintext
-Generate a Web app design for the UTU Merchant Engagement Program (MEP). The app's primary purpose is to empower merchant staff to track performance and manage promotions. The app should be clean, modern, and branded with UTU’s core colors: teal (#00A79C) and a vibrant accent green (#6BCB7C).
+```plaintext
+Generate a Web app design for the Genocs Engagement Program (EP). The app's primary purpose is to empower merchant staff to track performance and manage promotions. The app should be clean, modern, and branded with Genocs’s core colors: teal (#00A79C) and a vibrant accent green (#6BCB7C).
 
 The app should have the following key screens and features:
 1. **Login**: A clean login screen followed by a dashboard that serves as the home screen. The login screen should be simple, with fields for username and password, and a "Forgot Password" link. Social media login options (e.g., Google, Facebook) can be included for convenience.
 
 2. **Dashboard**: A clean dashboard that serves as the home screen. The dashboard should display key performance metrics for the current day, week, and month. Key metrics should include:
   - *Total Vouchers Issued*: Number of vouchers issued to customers.
-  - *Total Upsell Value*: The total amount spent using UTU vouchers.
+  - *Total Upsell Value*: The total amount spent using Genocs vouchers.
   The dashboard should show a linear progress bar indicating progress towards monthly goals for both metrics.
   - Conversion Rate: Percentage of customers who used vouchers out of total customers.
   - Total customers served.
@@ -49,23 +48,27 @@ The application should be built based on React and Tailwind CSS.
 
 ---
 
-# UTU Merchant Engagement Program (MEP) - Web Application Design Brief
+# Genocs Merchant Engagement Program (MEP) - Web Application Design Brief
 
 ## Project Overview
-Design a responsive web application for the UTU Merchant Engagement Program targeting **merchant staff/ambassadors** in retail environments. The app empowers users to track performance metrics, manage promotions, and participate in an incentive program.
+
+Design a responsive web application for the Genocs Merchant Engagement Program targeting **merchant staff/ambassadors** in retail environments. The app empowers users to track performance metrics, manage promotions, and participate in an incentive program.
 
 ## Target Users
-- **Primary**: Retail staff/ambassadors using the UTU reward system
+
+- **Primary**: Retail staff/ambassadors using the Genocs reward system
 - **Secondary**: Store managers monitoring team performance
 - **Environment**: Fast-paced retail settings, mobile-first usage
 
 ## Brand Guidelines
+
 - **Primary Color**: Teal (#00A79C)
 - **Accent Color**: Vibrant Green (#6BCB7C)
 - **Design Language**: Clean, modern, accessible
 - **Typography**: Sans-serif, high readability on mobile devices
 
 ## Technical Requirements
+
 - **Frontend**: React with Tailwind CSS
 - **Responsive**: Mobile-first design optimized for iOS/Android browsers
 - **Performance**: < 3s load time on 3G networks
@@ -75,7 +78,9 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 ## Core Features & User Flows
 
 ### 1. Authentication & Onboarding
+
 **Login Screen:**
+
 - Username/password fields with validation
 - "Remember me" option
 - "Forgot Password" flow
@@ -83,51 +88,62 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 - Error handling with clear messaging
 
 **Onboarding Flow (First-time users):**
+
 - Welcome screens introducing key features
 - Tutorial for issuing first voucher
 - Goal-setting wizard for personal targets
 - Skip option for returning users
 
 ### 2. Dashboard (Home Screen)
+
 **Primary Metrics (Prominent display):**
+
 - Total Vouchers Issued (daily/weekly/monthly views)
 - Total Upsell Value with currency formatting
 - Progress bars toward personal/team goals with percentage completion
 - Visual indicators for goal achievement (badges/icons)
 
 **Secondary Metrics:**
+
 - Conversion Rate (vouchers redeemed vs issued)
 - Total Customers Served
 - Average voucher value
 
 **Performance Cards:**
+
 - **Weekly Summary**: Voucher count + upsell value with trend indicator (↗️↘️)
 - **Monthly Summary**: Same format with month-over-month comparison
 - **Quick Actions**: "Issue Voucher" and "View Rewards" buttons
 
 **Data Refresh:**
+
 - Real-time updates or manual refresh option
 - Loading states and error handling
 - Offline mode indicator
 
 ### 3. Learning Center (Previously "Academic")
+
 **Purpose**: Product knowledge and sales training resources
 
 **Features:**
-- Categorized content (Product Info, Sales Techniques, UTU Updates)
+
+- Categorized content (Product Info, Sales Techniques, Genocs Updates)
 - Search functionality with filters
 - Progress tracking for completed materials
 - Downloadable resources for offline access
 - Interactive quizzes or assessments
 
 ### 4. Incentive Program Management
+
 **Ambassador Profile:**
+
 - Current tier status with visual progress indicator
 - Points balance and earning history
 - Requirements for next tier advancement
 - Achievement badges and milestones
 
 **Reward Catalogue:**
+
 - Grid/card layout with high-quality images
 - Point costs clearly displayed
 - Redemption status (available, out of stock, redeemed)
@@ -135,13 +151,16 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 - Redemption history
 
 ### 5. Settings & Profile
+
 **Account Management:**
+
 - Personal information editing
 - Store/location assignment
 - Language preferences
 - Notification settings (push, email, in-app)
 
 **App Settings:**
+
 - Theme preferences (light/dark mode)
 - Data usage settings
 - Cache management
@@ -150,24 +169,28 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 ## User Experience Priorities
 
 ### Navigation
+
 - Bottom tab bar for main sections on mobile
 - Breadcrumb navigation for deeper screens
 - One-handed operation optimization
 - Clear visual hierarchy
 
 ### Performance Indicators
+
 - Loading skeletons for data-heavy screens
 - Progressive image loading
 - Optimistic UI updates where possible
 - Graceful error states with retry options
 
 ### Accessibility
+
 - High contrast ratios for outdoor retail use
 - Large touch targets (44px minimum)
 - Screen reader compatibility
 - Keyboard navigation support
 
 ## Edge Cases & Error Handling
+
 - Network connectivity loss scenarios
 - Invalid/expired authentication tokens
 - Empty states (no vouchers issued, no rewards available)
@@ -175,19 +198,22 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 - Data synchronization conflicts
 
 ## Success Metrics
+
 - Time to complete primary actions (issue voucher, check progress)
 - Daily/weekly active usage rates
 - Feature adoption rates (learning center, reward redemption)
 - User satisfaction scores
 
 ## Technical Considerations
+
 - Progressive Web App (PWA) capabilities
 - Browser compatibility (Safari, Chrome, Firefox mobile)
 - Touch gesture support
 - Battery usage optimization
 - Data usage awareness (image optimization, API efficiency)
 
-## Future Considerations
+## FGenocsre Considerations
+
 - Integration with POS systems
 - Team collaboration features
 - Manager dashboard with team overview
@@ -195,9 +221,9 @@ Design a responsive web application for the UTU Merchant Engagement Program targ
 - Gamification elements (leaderboards, challenges)
 
 ## Questions to Clarify
+
 1. What's the expected concurrent user volume?
 2. Are there integration requirements with existing merchant systems?
 3. What's the data retention policy for performance metrics?
 4. Are there regional/language localization needs?
 5. What level of analytics/tracking is required?
-

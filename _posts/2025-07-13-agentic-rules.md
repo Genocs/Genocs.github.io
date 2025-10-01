@@ -3,17 +3,13 @@ title: "Agentic Rules"
 date: 2025-07-13
 ---
 
-# Introduction 
+# Introduction
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-
 Following is a set of agentic rules to help Claude Code understand how to interact with this repository effectively:
 
-
 Create a file named `CLAUDE.md` in the root of the repository with the following content:
-
-```markdown
 
 ```plaintext
 ## Agentic Rules
@@ -50,6 +46,5 @@ Update this file as the codebase evolves to help future Claude Code instances un
 3. Before you begin working, check in with me and I will verify the plan.
 4. Then, begin working on the todo items, marking them as complete as you go.
 5. Please every step of the way just give me a high level explanation of what changes you made.
-6. Make every task and code change you do as simple as possible. We want to avoid making any massive or complex changes. Every change should impact as little code as possible. Everything is about simplicity. 
+6. Make every task and code change you do as simple as possible. We want to avoid making any massive or complex changes. Every change should impact as little code as possible. Everything is about simplicity.
 ```
-
