@@ -5,10 +5,12 @@ categories: architectures
 ---
 
 
-## Repository structure for .NET Solution
+## Generic repository folder structure
 
 ```plaintext
 root-project/
+├── .azure/
+│   └── pipelines/
 ├── .cursor/
 │   └── rules/
 ├── .git/
@@ -17,8 +19,35 @@ root-project/
 │   ├── instructions/
 │   ├── workflows/
 │   └── copilot-instructions.md
-├── devops/
-│   └── azure/
+├── infrastructure/
+│   ├── bicep/
+│   ├── k8s/
+│   └── terraform/
+├── docs/
+├── scripts/
+├── src/
+├── .gitignore
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── LICENSE
+├── README.md
+```
+
+
+## Repository structure for .NET Solution
+
+```plaintext
+root-project/
+├── .azure/
+│   └── pipelines/
+├── .cursor/
+│   └── rules/
+├── .git/
+├── .github/
+│   ├── chatmodes/
+│   ├── instructions/
+│   ├── workflows/
+│   └── copilot-instructions.md
 ├── infrastructure/
 │   ├── bicep/
 │   ├── k8s/
@@ -38,19 +67,7 @@ root-project/
 ```
 
 
-## Build pipeline
-The build pipeline shall not take more the 10 min to be completed. 1 min is the default value
 
-## Unit test
-The unit test shall not take more the 5 min to be completed. 2 min is the default value
-
-## Deployment pipeline
-The deployment pipeline shall be separated by the build pipeline.
-
-## Database migration shall be disabled and only manual migration shall be possible.
-
-## Commit and PR
-PR approvation is not compulsory, developer will decide when code review is need.
 
 
 | Repo                        | Artifact             | Note                            |
