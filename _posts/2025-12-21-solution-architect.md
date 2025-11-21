@@ -149,16 +149,13 @@ _Goal_: **Demonstrate you understand the "Path to Production"**.
 - **Orchestration (Kubernetes/K8s)**: How to create a Kubernetes cluster, how to create a Kubernetes deployment, how to create a Kubernetes service, how to create a Kubernetes ingress.
 
 - **Pods, Services, Deployments, Ingress**: The basic building blocks.
-
 - **Sidecar Pattern**: (e.g., Dapr or Envoy) for abstracting communication/logging.
-
 - **Config Management**: ConfigMaps and Secrets (and how to use KeyVault instead of env variables).
 
 - **CI/CD Pipelines**
 
-- **Build**: Unit tests -> Build Docker Image -> Scan for vulnerabilities -> Push to Registry.
-
-- **Release**: Deploy to Dev -> Integration Tests -> Promote to QA/Prod.
+  - **Build**: `Build the solution` -> `Scan for package vulnerabilities` -> `Unit tests` -> `Build Docker Image` -> `Scan for container vulnerabilities` -> `Push to Registry`.
+  - **Release**: `Deploy to Dev` -> `Integration Tests` -> `Promote to QA` -> `Promote to Prod`.
 
 - **Deployment Strategies**: Strategies to minimize downtime:
   - `Blue/Green` deployment
@@ -172,44 +169,47 @@ _Goal_: **How do you know it's broken before the customer calls?**
 
 **The Three Pillars of Observability**
 
-1. **Logging**: Structured logging (Serilog) sent to ELK/Seq/AppInsights. Logging is used to track application behavior and to troubleshoot issues. 
+1. **Logging**: Structured logging (Serilog) sent to ELK/Seq/AppInsights. Logging is used to track application behavior and to troubleshoot issues.
 
-   Example of structured logging: 
-    ```json
-    {
-      "timestamp": "2025-01-01T00:00:00.000Z",
-      "level": "INFO",
-      "message": "User logged in",
-      "userId": "1234567890"
-    }
-    ```    
+   Example of structured logging:
 
-2. **Metrics** : CPU, Memory, Request Latency (Prometheus/Grafana). Metrics are used to track application performance and to troubleshoot issues. 
+   ```json
+   {
+     "timestamp": "2025-01-01T00:00:00.000Z",
+     "level": "INFO",
+     "message": "User logged in",
+     "userId": "1234567890"
+   }
+   ```
+
+2. **Metrics** : CPU, Memory, Request Latency (Prometheus/Grafana). Metrics are used to track application performance and to troubleshoot issues.
 
    Example of metrics:
-    ```json
-    {
-      "timestamp": "2025-01-01T00:00:00.000Z",
-      "cpu": 50,
-      "memory": 100,
-      "requestLatency": 100
-    }
-    ```
+
+   ```json
+   {
+     "timestamp": "2025-01-01T00:00:00.000Z",
+     "cpu": 50,
+     "memory": 100,
+     "requestLatency": 100
+   }
+   ```
 
 3. **Tracing**: OpenTelemetry (standard in .NET now). Visualizing a request as it hops between 5 different microservices (Correlation IDs). Tracing is used to track application behavior and to troubleshoot issues.
 
    Example of tracing:
-    ```json
-    {
-      "traceId": "1234567890",
-      "spanId": "1234567890",
-      "parentSpanId": "1234567890",
-      "operationName": "GetUser",
-      "startTime": "2025-01-01T00:00:00.000Z",
-      "endTime": "2025-01-01T00:00:00.000Z",
-      "duration": 100
-    }
-    ```
+
+   ```json
+   {
+     "traceId": "1234567890",
+     "spanId": "1234567890",
+     "parentSpanId": "1234567890",
+     "operationName": "GetUser",
+     "startTime": "2025-01-01T00:00:00.000Z",
+     "endTime": "2025-01-01T00:00:00.000Z",
+     "duration": 100
+   }
+   ```
 
 ### Top 5 Interview Questions to Expect
 
@@ -239,7 +239,6 @@ _Goal_: **How do you know it's broken before the customer calls?**
 
 _Goal_: **Show deep expertise in testing**.
 
-
 ### **Testing Pyramid**
 
 The testing pyramid is a model that suggests the different types of tests should be in a specific ratio. It is a way to balance the different types of tests and to ensure that the tests are comprehensive and effective.
@@ -247,6 +246,7 @@ The testing pyramid is a model that suggests the different types of tests should
 ![Test pyramid](./tests-pyramid.jpeg)
 
 Test coverage should be:
+
 ```plaintext
 Unit Tests:        100%
 Integration Tests:  80%
@@ -273,12 +273,14 @@ The 3A principles are a way to test the code. They are:
 ### **Test Libraries**
 
 #### **Unit Tests**
+
 Unit tests are used to test the smallest units of code. They are typically fast to run and can be run independently.
 
 - **xUnit**: A unit testing framework for .NET.
 - **NUnit**: A unit testing framework for .NET.
 
 #### **Integration Tests**
+
 Integration tests are used to test the integration of the different units of code. They are typically slower to run and can be run independently.
 
 - [**NSubstitute**](https://nsubstitute.github.io/): A mocking framework for .NET.
@@ -293,16 +295,19 @@ Integration tests are used to test the integration of the different units of cod
 - [**AutoFluentAssertions**](https://github.com/AutoFixture/AutoFluentAssertions): A mocking framework for .NET.
 
 #### **BDD Tests**
+
 Behavior Driven Development (BDD) tests are used to test the behavior of the different units of code. They are typically slower to run and can be run independently.
 
 - [**Reqnroll**](https://reqnroll.net/): A Behavior Driven Development (BDD) testing framework for .NET. It's a modern alternative to `SpecFlow`.
 
 #### **Contract Tests**
+
 Contract tests are used to test the contracts of the different units of code. They are typically slower to run and can be run independently.
 
 - [**Pact**](https://docs.pact.io/): A contract testing framework for .NET.
 
 #### **Component Tests**
+
 Component tests are used to test the components of the different units of code. They are typically slower to run and can be run independently. A well known framework is `Testcontainers`. It allows to test the components of the different units of code in a containerized environment.
 
 - [**Testcontainers**](https://testcontainers.com/): A container testing framework for .NET .
