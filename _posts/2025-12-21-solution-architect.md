@@ -243,8 +243,6 @@ _Goal_: **Show deep expertise in testing**.
 
 The testing pyramid is a model that suggests the different types of tests should be in a specific ratio. It is a way to balance the different types of tests and to ensure that the tests are comprehensive and effective.
 
-![Test pyramid](./tests-pyramid.jpeg)
-
 Test coverage should be:
 
 ```plaintext
@@ -304,6 +302,7 @@ Behavior Driven Development (BDD) tests are used to test the behavior of the dif
 
 Contract tests are used to test the contracts of the different units of code. They are typically slower to run and can be run independently.
 
+- [**Pact**](https://docs.pact.io/): A contract testing framework for .NET.
 
 #### **Component Tests**
 
