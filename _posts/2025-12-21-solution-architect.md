@@ -304,7 +304,6 @@ Behavior Driven Development (BDD) tests are used to test the behavior of the dif
 
 Contract tests are used to test the contracts of the different units of code. They are typically slower to run and can be run independently.
 
-- [**Pact**](https://docs.pact.io/): A contract testing framework for .NET.
 
 #### **Component Tests**
 
