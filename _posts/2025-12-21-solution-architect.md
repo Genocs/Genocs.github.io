@@ -243,6 +243,8 @@ _Goal_: **Show deep expertise in testing**.
 
 The testing pyramid is a model that suggests the different types of tests should be in a specific ratio. It is a way to balance the different types of tests and to ensure that the tests are comprehensive and effective.
 
+![Test pyramid](./tests-pyramid.jpeg)
+
 Test coverage should be:
 
 ```plaintext
