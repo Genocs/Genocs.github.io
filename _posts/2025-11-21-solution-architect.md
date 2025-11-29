@@ -244,7 +244,7 @@ _Goal_: **Show deep expertise in testing**.
 
 The testing pyramid is a model that suggests the different types of tests should be in a specific ratio. It is a way to balance the different types of tests and to ensure that the tests are comprehensive and effective.
 
-![Testing pyramid diagram showing five levels of testing from bottom to top: Unit Tests (largest red base), Component Tests (orange), Integration Tests (yellow), API Tests (teal), and UI Tests (blue triangle at top). Manual Tests appear as a blue cloud above the pyramid. Left side shows arrow labeled More Isolation to More Integration. Right side shows arrow labeled Faster to Slower. Gray boxes on right contain icons representing End to End testing, integration workflows, component testing, and unit testing respectively. The pyramid illustrates that unit tests should form the foundation with fewer higher-level tests as you move up the hierarchy.](./tests-pyramid.jpeg)
+![Testing pyramid diagram showing five levels of testing from bottom to top: Unit Tests (largest red base), Component Tests (orange), Integration Tests (yellow), API Tests (teal), and UI Tests (blue triangle at top). Manual Tests appear as a blue cloud above the pyramid. Left side shows arrow labeled More Isolation to More Integration. Right side shows arrow labeled Faster to Slower. Gray boxes on right contain icons representing End to End testing, integration workflows, component testing, and unit testing respectively. The pyramid illustrates that unit tests should form the foundation with fewer higher-level tests as you move up the hierarchy.](/assets/images/tests-pyramid.jpeg)
 
 Test coverage should be:
 
