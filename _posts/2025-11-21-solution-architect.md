@@ -50,16 +50,15 @@ In this role, the solution architect is responsible not only for coding the solu
 
 ### Microservices and API Design
 
-Microservices and API Design is the foundation of the software solution.
+Microservice architecture is one of the most popular architectural patterns for building scalable and maintainable software solutions. 
 
-- Microservices are a set of small, independent services that can be developed, deployed, and scaled independently.
-- API Design is the design of the API that will be used to communicate between the services.
+Microservices are a set of small, independent services that can be developed, deployed, and scaled independently. Along with API Design, they form the backbone of modern software architectures.
+
+On the other hand, API Design is the design of the API that will be used to communicate between the services.
 
 ### Data Strategy and Data Management
 
-Data Strategy and Data Management is the foundation of the software solution.
-
-- Data Strategy is the strategy for the data management of the software solution.
+Data Strategy is the strategy for the data management of the software solution.
 
 ## Phase 1: Architectural Patterns & Design
 
@@ -69,11 +68,18 @@ _Goal_: **Prove you can design scalable, decoupled systems**.
 
 Be ready to explain when not to use microservices. The `distributed monolith` is a common failure mode interviewers look for.
 
-#### _Domain-Driven Design (DDD)_
+#### ***Domain-Driven Design (DDD)***
 
 - **Bounded Contexts**: How to define service boundaries (this is crucial to avoid tight coupling).
 
 - **Aggregates, Entities, Value Objects**: How to structure internal logic.
+
+Question: _How do you identify bounded contexts in a legacy monolith?_
+Ready Answer: Analyze business capabilities, identify natural seams in the codebase, and look for areas with distinct data models or workflows.
+
+Question: _What define the equality operator for Identity vs Value Object?_
+Ready Answer: Identity objects are compared by their unique identifier (ID), while Value Objects are compared based on their attributes or properties.
+
 
 #### **Design Patterns**
 
@@ -116,6 +122,24 @@ _Goal_: **Show deep expertise in the primary technology stack**.
 - **Role**: Routing, Authentication, Rate Limiting, SSL Termination.
 
 - **Tools**: YARP (Yet Another Reverse Proxy) (Microsoft's current standard) or Ocelot.
+
+>
+> **Question**: _When would you use gRPC over REST?_
+>
+> **Ready Answer**: _Use gRPC for high-performance, low-latency communication between internal microservices, especially when you need strong typing and support for streaming. REST is better suited for public APIs where human readability and broad client support are priorities._
+
+
+> **Question**: _What is the difference between Scoped and Transient services in .NET Dependency Injection?_
+>
+> **Ready Answer**: _
+> - Scoped services are created once per client request (or scope), meaning they are shared within that request but not across requests.
+> 
+> - Transient services are created each time they are requested, so a new instance is provided every time they are injected._
+
+> **Question**: _What is a .NET Generics?_
+>
+> **Ready Answer**: _Generics in .NET allow you to define classes, interfaces, and methods with a placeholder for the data type. This enables code reusability and type safety, as you can create data structures and algorithms that work with any data type without sacrificing performance or safety._
+
 
 ## Phase 3: Data Strategy (SQL Server)
 
@@ -312,3 +336,10 @@ Contract tests are used to test the contracts of the different units of code. Th
 Component tests are used to test the components of the different units of code. They are typically slower to run and can be run independently. A well known framework is `Testcontainers`. It allows to test the components of the different units of code in a containerized environment.
 
 - [**Testcontainers**](https://testcontainers.com/): A container testing framework for .NET .
+
+
+
+<ul class="checklist">
+  <li>Your checklist item</li>
+  <li>Another item</li>
+</ul>
