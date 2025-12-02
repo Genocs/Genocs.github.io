@@ -74,11 +74,14 @@ Be ready to explain when not to use microservices. The `distributed monolith` is
 
 - **Aggregates, Entities, Value Objects**: How to structure internal logic.
 
-Question: _How do you identify bounded contexts in a legacy monolith?_
-Ready Answer: Analyze business capabilities, identify natural seams in the codebase, and look for areas with distinct data models or workflows.
-
-Question: _What define the equality operator for Identity vs Value Object?_
-Ready Answer: Identity objects are compared by their unique identifier (ID), while Value Objects are compared based on their attributes or properties.
+>
+> **Question**: _How do you identify bounded contexts in a legacy monolith?_
+> 
+> **Ready Answer**: _Analyze business capabilities, identify natural seams in the codebase, and look for areas with distinct data models or workflows._
+> 
+> **Question**: _What define the equality operator for Identity vs Value Object?_
+> 
+> **Ready Answer**: _Identity objects are compared by their unique identifier (ID), while Value Objects are compared based on their attributes or properties._
 
 
 #### **Design Patterns**
@@ -128,13 +131,15 @@ _Goal_: **Show deep expertise in the primary technology stack**.
 >
 > **Ready Answer**: _Use gRPC for high-performance, low-latency communication between internal microservices, especially when you need strong typing and support for streaming. REST is better suited for public APIs where human readability and broad client support are priorities._
 
-
 > **Question**: _What is the difference between Scoped and Transient services in .NET Dependency Injection?_
 >
-> **Ready Answer**: _
-> - Scoped services are created once per client request (or scope), meaning they are shared within that request but not across requests.
+> **Ready Answer**: 
 > 
-> - Transient services are created each time they are requested, so a new instance is provided every time they are injected._
+> _- `Scoped services` are created once per client request (or scope), meaning they are shared within that request but not across requests._
+> 
+> _- `Transient services` are created each time they are requested, so a new instance is provided every time they are injected._
+> 
+> _- `Singleton services` are_
 
 > **Question**: _What is a .NET Generics?_
 >
@@ -143,19 +148,22 @@ _Goal_: **Show deep expertise in the primary technology stack**.
 
 ## Phase 3: Data Strategy (SQL Server)
 
-_Goal_: **Address the hardest part of distributed systems—state**.
+_Goal_: **Address the hardest part of distributed systems — state**.
 
-- **Database-per-Service**: The golden rule. Explain how to break foreign key dependencies between services (hint: use IDs and eventual consistency, not cross-database joins).
+- **Database-per-Service**: `The golden rule`. Explain how to break foreign key dependencies between services (hint: use IDs and eventual consistency, not cross-database joins).
 
 - **Distributed Transactions**:
 
-  - **Saga Pattern**: Orchestration (central controller) vs. Choreography (event-driven). This replaces 2-Phase Commit (2PC).
+  - **Saga Pattern**: `Orchestration` (central controller) vs. `Choreography` (event-driven). This replaces 2-Phase Commit (2PC).
 
-  - **CAP Theorem**: Explain why you might choose Availability over Consistency or Partition Tolerance (Eventual Consistency is a form of Availability over Consistency).
+  - **CAP Theorem**: Explain why you might choose `Availability` over `Consistency` or `Partition Tolerance` (Eventual Consistency is a form of Availability over Consistency).
 
 - **Performance**
 
-  - **Indexing strategies in SQL Server**: Clustered Index, Non-Clustered Index, Covering Index, Filtered Index, Index Intersection, Index Seek, Index Scan, Index Merge, Index Covering, Index Filtering, Index Optimization, Index Rebuilding, Index Reorganizing, Index Statistics, Index Maintenance, Index Monitoring, Index Tuning, Index Performance, Index Analysis, Index Recommendations, Index Best Practices, Index Optimization Techniques, Index Performance Optimization, Index Performance Tuning, Index Performance Analysis, Index Performance Recommendations, Index Performance Best Practices, Index Performance Techniques, Index Performance Optimization Techniques, Index Performance Tuning Techniques, Index Performance Analysis Techniques, Index Performance Recommendations Techniques, Index Performance Best Practices Techniques.
+  - **Indexing strategies in SQL Server**: 
+  Clustered Index,
+  Non-Clustered Index,
+  Covering Index, Filtered Index, Index Intersection, Index Seek, Index Scan, Index Merge, Index Covering, Index Filtering, Index Optimization, Index Rebuilding, Index Reorganizing, Index Statistics, Index Maintenance, Index Monitoring, Index Tuning, Index Performance, Index Analysis, Index Recommendations, Index Best Practices, Index Optimization Techniques, Index Performance Optimization, Index Performance Tuning, Index Performance Analysis, Index Performance Recommendations, Index Performance Best Practices, Index Performance Techniques, Index Performance Optimization Techniques, Index Performance Tuning Techniques, Index Performance Analysis Techniques, Index Performance Recommendations Techniques, Index Performance Best Practices Techniques.
 
 - **EF Core Optimization**: Tracking vs. No-Tracking, Split Queries, Projection (.Select()).
 
@@ -195,22 +203,46 @@ _Goal_: **How do you know it's broken before the customer calls?**
 **The Three Pillars of Observability**
 
 1. **Logging**: Structured logging (Serilog) sent to ELK/Seq/AppInsights. Logging is used to track application behavior and to troubleshoot issues.
+ 
+  _Example of structured logging_:
+  ```json
+  {
+    "timestamp": "2025-01-01T00:00:00.000Z",
+    "level": "INFO",
+    "message": "User logged in",
+    "userId": "1234567890"
+  }
+  ```
 
-   Example of structured logging:
+  _Example of error logging with context_:
+  ```json
+  {
+    "timestamp": "2025-01-01T00:00:00.000Z",
+    "level": "ERROR",
+    "message": "Failed to process order",
+    "orderId": "ORD-12345",
+    "userId": "1234567890",
+    "exception": "System.InvalidOperationException",
+    "stackTrace": "..."
+  }
+  ```
 
-   ```json
-   {
-     "timestamp": "2025-01-01T00:00:00.000Z",
-     "level": "INFO",
-     "message": "User logged in",
-     "userId": "1234567890"
-   }
-   ```
+  _Example of performance logging_:
+  ```json
+  {
+    "timestamp": "2025-01-01T00:00:00.000Z",
+    "level": "INFO",
+    "message": "API request completed",
+    "endpoint": "/api/orders",
+    "method": "POST",
+    "duration": 250,
+    "statusCode": 201
+  }
+  ```
 
 2. **Metrics** : CPU, Memory, Request Latency (Prometheus/Grafana). Metrics are used to track application performance and to troubleshoot issues.
 
-   Example of metrics:
-
+   _Example of metrics_:
    ```json
    {
      "timestamp": "2025-01-01T00:00:00.000Z",
@@ -222,8 +254,7 @@ _Goal_: **How do you know it's broken before the customer calls?**
 
 3. **Tracing**: OpenTelemetry (standard in .NET now). Visualizing a request as it hops between 5 different microservices (Correlation IDs). Tracing is used to track application behavior and to troubleshoot issues.
 
-   Example of tracing:
-
+   _Example of tracing_:
    ```json
    {
      "traceId": "1234567890",
@@ -336,10 +367,3 @@ Contract tests are used to test the contracts of the different units of code. Th
 Component tests are used to test the components of the different units of code. They are typically slower to run and can be run independently. A well known framework is `Testcontainers`. It allows to test the components of the different units of code in a containerized environment.
 
 - [**Testcontainers**](https://testcontainers.com/): A container testing framework for .NET .
-
-
-
-<ul class="checklist">
-  <li>Your checklist item</li>
-  <li>Another item</li>
-</ul>
