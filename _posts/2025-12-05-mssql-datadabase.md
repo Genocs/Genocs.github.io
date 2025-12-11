@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "MSSQL Database - Setup with Docker"
 date: 2025-12-05
 ---

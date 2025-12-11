@@ -1,5 +1,5 @@
 ---
-title: "MS SQL Database - Data Governance and Management"
+title: "MSSQL Database - Data Governance and Management"
 date: 2025-12-11
 ---
 
