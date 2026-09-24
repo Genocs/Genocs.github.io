@@ -154,11 +154,13 @@ These repositories allow to store projects both in a public and private fashion.
 ### Backend services
 
 
-### Post
-<ul>
+## Notes
+{: #notes}
+
+<ul class="notes-index">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} — {{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
