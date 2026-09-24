@@ -1,161 +1,160 @@
-Welcome to Genocs - GitHub pages
+From idea to software
 ===
 
-This repo is intended to recap the main steps required to convert an idea into a software product. 
+This site is a working map of how a product idea becomes a shippable system. Delivery is rarely linear. Constraints surface late, objectives move, and unexamined change quietly taxes the whole architecture.
 
-This process it is not straightforward ever. There are a lot of variables and these variables, often, are not clear at the beginning. Besides that, aims and targets could change during the ‘path’. Often this happens without evaluating the impact of the changes on the entire ecosystem.
+Building software at a professional standard requires depth across product, architecture, operations, and engineering — and a discipline about what *not* to build.
 
-To design a product and to implement it correctly, as software project it is necessary to have a clear and deeply knowledge of different areas, technologies, tools, and foremost, the right mindset.
+## Golden rules
 
+Two constraints that scale better than process:
 
-## Golden Rules
-Before starting to do anything, don't forget to apply these general purpose golden rules!
+- **DRY** — Don't Repeat Yourself
+- **KISS** — Keep It Simple
 
-- DRY (Don't repeat yourself)
-- KISS (Keep It Simple Stupid)
+DRY is about a single source of truth: logic and data live in one place, then get reused through well-chosen abstractions. Duplication is not only extra typing; it is extra failure modes.
 
+KISS is about resisting accidental complexity. Prefer the smallest design that meets the requirement. Complexity that is not earned by the problem becomes the tax you pay in review, operations, and every subsequent change.
 
-**Don't Repeat Yourself** (DRY) is a software development principle that states that software developers should avoid repeating the same code or data in multiple places. This principle encourages developers to create abstractions and modularize their code, making it easier to maintain and update. By following the DRY principle, developers can reduce the amount of time spent on debugging and refactoring code, as well as improve the overall quality of their software.
+Before any work starts:
 
-The **Keep It Simple Stupid** (KISS) pattern is a software development principle that encourages developers to create solutions that are easy to understand and maintain. This pattern emphasizes the importance of writing code that is straightforward, efficient, and free of unnecessary complexity. By following this pattern, developers can create applications that are easier to debug and maintain over time.
+> The cheapest implementation is the one you do not write.  
+> Ask first: **is this required?**
 
+## Shape the idea
 
-and remember:
+Stakeholders must make the product explicit. Competitive context, **MVP** (minimum viable product), and **KPIs** (key performance indicators) belong here — before engineering commits to a shape that is expensive to reverse.
 
-> - The best and fastest way to do something is don't.
-> - So before start doing something, ask yourself: **it is really needed**?
+*What* and *why* are insufficient without *how*:
 
+- **What** is being built
+- **Why** it exists
+- **How** it will be delivered
 
-## Setup the Idea
-In this stage, the stakeholders should describe the idea behind the product. 
+Omit any of the three and the program drifts: scope without a market, purpose without a design, or a design without a reason.
 
-The market analysis like competitors evaluation, **MVP** (Minimum Viable Product) and the **KPI** (Key Product Indicators) identification should be defined upfront and deeply evaluated.
+### MVP
 
-Terms like ***what*** and ***why*** are not enough. The ***how*** is very important as well.
+The MVP is the smallest product that can be placed in front of real users. It is a learning instrument, not a reduced wish list. Protect the invariants that define the product; everything else is optional until evidence says otherwise.
 
-- **What** we are going to build
-- **Why** we are doing that
-- **How** we are building the solution
+### KPIs
 
-Miss one of these key points and the solution will fail miserably.
+KPIs are the compass. They tell you where the business actually is, and whether the original plan still deserves the next increment of investment.
 
-### MPV
-Defining the MVP target is needed to be fast delivery something to the market. This is important to have feedback as well as to keep in mind what are the core concept that canno be disattended. 
+> At this stage the engineering team stays out of the critical path, except where a technical conversation is needed to keep the community warm.
 
-### KPI
-The KPI definition allow to have a monitor, ***the compass*** to estimate where the business is, and to apply the right corrections on the original plan.
+## Project management
 
-> ### NOTE
-> - During this stage the technical team is not involved ***(unless to warm-up the tech community) ***
+Tooling is secondary to cadence and visibility. These are the systems I have used in practice:
 
-
-
-## Project Management
-There are a lot of different tools out there. 
-
-Some of them that I used, and I was comfortable with. A short list below:   
-- [[Atlassian] Jira](https://www.atlassian.com/software/jira)
-- [[Atlassian] Trello](https://trello.com/)
+- [Jira](https://www.atlassian.com/software/jira)
+- [Trello](https://trello.com/)
 - [Figma](https://www.figma.com/)
-- [[Microsoft] VSTS](https://dev.azure.com/)
+- [Azure DevOps](https://dev.azure.com/)
 - Microsoft Project
 
+## Product architecture
 
-## Product Architecture
-Design the architecture is not a simple task. 
+Architecture is constraint-driven. Cloud is the default for many organisations; on-premises remains non-negotiable in others. Neither is a style — each is a set of operational and regulatory facts.
 
-Different companies have different constraints. 
+Enterprise-grade systems tend to rest on:
 
-For most of them be on the cloud is a must. It couldn’t be otherwise. But there are contexts where On-Prem is an unassailable requirement.
+- Clean Architecture (clear boundaries, dependency direction, testable cores)
+- Microservice architecture (independently deployable capabilities, explicit contracts)
 
-An entreprise grade software solution is 
-
-- Clean Architecture patterns
-- Microservice Architecture
-
+Choose the grain of distribution for the organisation you have, not the one described in a conference talk.
 
 ## DevOps
 
-### Source code Versioning
-The source code versioning is the repository where different developers store the result of their work. This tool could and should be used even when the development team is composed by few members even only one.
+### Source control
 
-These repositories allow to store projects both in a public and private fashion. The most important one is: 
-- [[Atlassian] Bitbutchet](https://bitbucket.org/)
+Version control is the system of record for the work. It is required for a team of one as much as for a platform organisation. Hosting may be public or private:
+
+- [Bitbucket](https://bitbucket.org/)
 - [GitHub](https://github.com/)
-- [[Microsoft] VSTS](https://azure.microsoft.com/en-us/services/devops/)
+- [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
 
-### CI/CD (Continuous Integration / Continuous Deploy) (How to build tests and run)
-- [Circle CI](https://circleci.com/)
+### CI/CD
+
+Build, test, and promote artifacts on a pipeline you trust:
+
+- [CircleCI](https://circleci.com/)
 - [Travis CI](https://travis-ci.com/)
-- [[Microsoft] Azure Devops](https://dev.azure.com/)
+- [Azure DevOps](https://dev.azure.com/)
 
-### Package manager (How store the artifacts)
-- [NuGet](https://www.nuget.org/) [.NET]
-- [MyGet](https://www.myget.org/) [.NET]
-- [DockerHub](https://hub.docker.com/) [Container registry]
-- Private Repository
+### Package and artifact stores
 
+- [NuGet](https://www.nuget.org/) — .NET
+- [MyGet](https://www.myget.org/) — .NET
+- [Docker Hub](https://hub.docker.com/) — container registry
+- Private registries, when the artifact cannot leave the estate
 
-## The platforms (Where the solution is executed)
+## Runtime platforms
 
-- Local [StandAlone local Application]
-- Device [Mobile and/or Embedded Application]
-- On-Prem
-- Public Cloud
-	- [Azure](https://portal.azure.com/)
-	- [AWS](https://aws.amazon.com/)
-	- [Google Cloud](https://cloud.google.com/)
-	- [Digital Ocean](https://cloud.digitalocean.com/)
+Where the solution actually runs:
 
-### The external services (What kind of infrastructure the services are needs)
+- Local — standalone applications
+- Device — mobile and embedded
+- On-premises
+- Public cloud
+  - [Azure](https://portal.azure.com/)
+  - [AWS](https://aws.amazon.com/)
+  - [Google Cloud](https://cloud.google.com/)
+  - [DigitalOcean](https://cloud.digitalocean.com/)
 
-- Datastore
-    - [MongoDB](https://www.mongodb.com/)
-    - [Elastic Search](https://www.elastic.co/)
-    - [Google Firebase Database](https://firebase.google.com/products/realtime-database)
-    - [Neo4j](https://neo4j.com/)
-    - [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server)
-    - [Oracle database](https://www.oracle.com/database/) 
-	
-- Enterprice message broker
-    - [RabbitMQ](https://www.rabbitmq.com/)
+### Supporting infrastructure
 
-- Enterprice Service Bus
-	- [Particular-NServicebus](https://particular.net/)
-	- [MassTransit](https://masstransit-project.com/)
-	- [Rebus](https://github.com/rebus-org/Rebus/)
-	- [RawRabbit](https://github.com/pardahlman/RawRabbit/)
+**Data stores**
 
+- [MongoDB](https://www.mongodb.com/)
+- [Elasticsearch](https://www.elastic.co/)
+- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
+- [Neo4j](https://neo4j.com/)
+- [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server)
+- [Oracle Database](https://www.oracle.com/database/)
 
-- Mail sender
-- SMS sender
-- Notification services
+**Messaging**
 
-## Software development
+- [RabbitMQ](https://www.rabbitmq.com/)
+
+**Service bus / messaging frameworks**
+
+- [NServiceBus](https://particular.net/)
+- [MassTransit](https://masstransit.io/)
+- [Rebus](https://github.com/rebus-org/Rebus/)
+- [RawRabbit](https://github.com/pardahlman/RawRabbit/)
+
+**Outbound channels**
+
+- Email
+- SMS
+- Push and in-app notification
+
+## Software delivery
+
+The implementation surface typically includes:
 
 - Backend services
-- Frontend Services
-- Mobile and Embedded
-- Machine learning 
+- Frontend applications
+- Mobile and embedded
+- Machine learning
 - Data analysis and processing
 
-### Backend services
+### Languages
 
-## Programming languages
-- C/C++
-- .NET C#
-- html/css
-- kotlin
-- GO
+- C / C++
+- C# / .NET
+- HTML / CSS
+- Kotlin
+- Go
 - Python
-- nodejs
+- Node.js
 - Java
-
-### Backend services
-
 
 ## Notes
 {: #notes}
+
+Field notes on architecture, tooling, and delivery.
 
 <ul class="notes-index">
   {% for post in site.posts %}
@@ -164,21 +163,3 @@ These repositories allow to store projects both in a public and private fashion.
     </li>
   {% endfor %}
 </ul>
-
-
-<div class="linked_post">
-    {% for post in site.posts %}
-        {% assign post_url = post.url | replace: "/", "" %}
-        {% if post_url == include.url %}
-            <div class="linked_post_div">
-                <article class="post">
-                    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-                    <p style="color: #969494; margin: 10px 0px; font-size: 18px;">
-                        {{ post.date | date: "%B %e, %Y" }}
-                    </p>
-                </article>
-            </div>
-        {% endif %}
-    {% endfor %}
-    <br>
-</div>
