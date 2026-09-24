@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="note">
+  <header class="note-header">
+    <p class="note-meta">
+      <span>note</span>
+      {% if page.date %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% endif %}
+    </p>
+    <h1 class="note-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="note-lead">{{ page.description }}</p>
+    {% endif %}
+  </header>
+  <div class="note-body">
+    {{ content }}
+  </div>
+</article>
